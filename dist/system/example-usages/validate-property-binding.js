@@ -12,6 +12,7 @@ System.register(["../helpers/element-helper", "../states/validation-state"], fun
                 validation_state_1 = validation_state_1_1;
             }],
         execute: function() {
+            // This is just a dumping ground for me to get my mind around stuff
             ValidatePropertyBinding = (function () {
                 function ValidatePropertyBinding() {
                     this.previousState = validation_state_1.ValidationState.unknown;

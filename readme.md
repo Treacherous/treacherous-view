@@ -1,28 +1,10 @@
-# Treacherous
+# Treacherous-View
 
-A modern async validation system to be used on the server or in the browser as well as with or without 
-view frameworks.
+[![Join the chat at https://gitter.im/grofit/treacherous](https://badges.gitter.im/grofit/treacherous.svg)](https://gitter.im/grofit/treacherous?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-[![Build Status][build-status-image]][build-status-url]
-[![Npm Version][npm-version-image]][npm-version-url]
-[![Npm Downloads][npm-downloads-image]][npm-version-url]
-[![Join Gitter Chat][gitter-image]][gitter-url]
+Treacherous view layer which tries to add some conventions and functionality to speed up custom plugin creation for other UI frameworks.
 
-It is an attempt to bring some consistency to validation in the javascript world you can write your 
-validation rules in a single way a single time and re-use it anywhere you want without worrying about
-each framework/platforms many different validation paradigms or libraries.
-
-## Features / Benefits
-
-- Fully async validation
-- Separation of rules and validation allowing composable rulesets
-- Supports nested complex objects/arrays
-- Optional Reactive validation, can monitor your model and re-validate automatically
-- Outside in validation, does not augment your models in any way
-- Can be integrated with any front end framework`*`
-- Works in browser or server
-
-`*` = Currently supports [knockout](https://github.com/grofit/treacherous-knockout), [aurelia] (https://github.com/grofit/treacherous-aurelia), others coming soon.
+(See more about Treacherous [HERE](https://github.com/grofit/treacherous))
 
 ---
 
@@ -32,7 +14,7 @@ By default the module is exposed as a `commonjs` module, however the dist folder
 
 ### Via NPM
 
-Just do an `npm install treacherous`
+Just do an `npm install treacherous-view`
 
 ### In browser
 
@@ -43,191 +25,60 @@ this functionality for UMD modules out of the box.
 
 ---
 
-## Simple Examples
+## What is in here?
 
-### Validating simple models
+So there are 2 big things in here, one is `view-strategies` which are an attempt to provide some "out of the box"
+and example strategies to see how you can get elements to be effected by validation. The other part is `view-triggers` 
+which are basically watchers on elements, they can monitor DOM events or anything you like really, and they will 
+trigger validation per property when a trigger is run.
 
-```js
-var simpleModel = {
-    foo: 20,
-    bar: "hello"
-};
+### View Strategies
 
-var ruleset = Treacherous.createRuleset()
-    .forProperty("foo")
-        .addRule("required")        // The property is required
-        .addRule("maxValue", 20)    // The property needs a value <= 20
-    .forProperty("bar")
-        .addRule("maxLength", 5)     // The property neds a length <= 5
-    .build();
-    
-var validationGroup = Treacherous.createGroup()
-    .build(simpleModel, ruleset);
+So there is an [`IViewStrategy`](src/view-strategies/iview-strategy.ts) which defines the contract all view strategies
+must adhere to. You can wirte your own or use the common `inline-strategy` but it should be easy enough to write a 
+portable view strategy.
 
-validationGroup.validate()
-    .then(function(isValid){
-        console.log(isValid); // should write true
-    });
-```
+The idea is that these are not tied to specific view frameworks like knockout, aurelia, ng etc but are just generic 
+element actioners, so you can make use of these strategies via composition in a treacherous plugin for a view framework,
+which is what happens in the treacherous-aurelia project.
 
-### Validating simple arrays in models
+#### View Strategy Registry
 
-```js
-var Treacherous = require("treacherous");
+There is a registry which contains all available types of view strategy which will basically use the `strategyName` as 
+the link to retrieve them from the registry. Like the `ruleRegistry` object which is exported from `Treacherous` there 
+is a default instance exported which contains the "default" setup for the registry. You can add/remove things from 
+this or just ignore it and make your own, but this is generally the way you access view strategies.
 
-var simpleModel = {
-    foo: [10, 20, 30]
-};
+#### Built in Strategies
 
-var ruleset = Treacherous.createRuleset()
-    .forProperty("foo")
-        .addRule("maxLength", 5)        // The array can only contain <= 5 elements
-        .addRuleForEach("maxValue", 20) // Each element needs a value <= 20
-    .build();
-    
-var validationGroup = Treacherous.createGroup()
-    .build(simpleModel, ruleset);
+The framework comes with built in strategies for the following:
 
-validationGroup.getModelErrors(true) // the true value indicates a full revalidation
-    .then(function(errors){
-        console.log(errors); // should contain { "foo[2]": "<some error about max value>" }
-    });
-```
+* `inline`    - This will append a message in-line, it is fairly basic and more of an example
 
----
+### View Triggers
 
-## Creating Validation Groups
+Like the strategies there is a [`IViewTrigger`](src/view-triggers/iview-trigger.ts) which defines the contract for all 
+triggers. They can be as complex or as simple as needed as long as they adhere to the interface.
 
-The validation group is the object which manages validation state, you can find out a lot more
-information on this within the [docs](docs/validation-groups.md).
+#### View Triggers Registry
 
-Here are a few simple examples to save you trawling the docs.
+Much like the strategy registry there is a trigger one too which by default comes with the built in triggers.
 
-### Check current validity
-```js
-var validationGroup = Treacherous.createGroup()
-    .build(...);
+#### Built in triggers
 
-validationGroup.validate()
-    .then(function(isValid){
-        // true is valid, false is invalid
-    ));
-```
+The framework comes with built in triggers for the following:
 
-### Get all errors
-```js
-var validationGroup = Treacherous.createGroup()
-    .build(...);
+* `blur`      - Triggers validation when the DOM element blurs
+* `change`    - Triggers validation when the DOM element changes (blur & value changed)
+* `init`      - Triggers validation when the element is initialized, this happens only once
+* `interval`  - This will continually trigger validation on a given interval, you can tell it only to do so when focused
+* `keyup`     - Triggers validation when any key is released
+* `submit`    - Only triggers validation when a containing form is submitted
 
-validationGroup.getModelErrors()
-    .then(function(propertyErrors){...));
-```
-
-### Subscribe validation changes
-```js
-var validationGroup = Treacherous.createGroup()
-    .build(...);
-
-validationGroup.propertyStateChangedEvent.subscribe(function(propertyValidationChangedEvent){...));
-```
-
-## Typescript users
-
-As typescript users you can get some nicer features and intellisense so you can create typed rules allowing 
-you to use lambda style property location like so:
-
-```ts
-var ruleset = Treacherous.createRuleset<SomeModel>()
-    .addProperty(x => x.SomeProperty)
-    .addRule("required")
-    .build();
-```
-
----
-
-## Validation rules
-
-The framework comes with built in validators for the following:
-
-* `date`        - The value is expressible as a date
-* `decimal`     - The value is expressible as a float/single
-* `email`       - The value conforms to a valid email address
-* `equal`       - The value is equal to another value
-* `isoDate`    - The value conforms to a valid ISO date format
-* `maxLength`  - The value must have a length <= value
-* `maxValue`   - The value must have a value <= value
-* `minLength`  - The value must have a length >= value
-* `minValue`   - The value must have a value >= value
-* `notEqual`   - The value is not equal to another value
-* `number`      - The value is expressible as an integer
-* `regex`       - The value matches the regex pattern
-* `required`    - The value is not a null-like value
-* `step`        - The value conforms to the numeric steps provided
-* `matches`     - The value must match another property in the model
-
-### Creating custom rules
-
-So if you want to make your own rule you need to do 2 things, one is create the rule handler class
-which should conform to the `IValidationRule` interface, once you have done the validator you then need to register it so the validation system is aware of it,
-to do that you need to call `Treacherous.ruleRegistry.registerRule(new SomeCustomValidator());`.
-
-To find out more read the [Custom Rules](docs/custom-rules.md) docs.
+Hopefully more will be added as the library evolves.
 
 --- 
 
 ## Documentation
 
 Just look in the `docs` folder for more documentation on certain scenarios or subject matters.
-
----
-
-## Developing
-
-If you want to develop it further just clone the repo, `npm install` and `gulp` it should then provide you 
-a working version to play with. If you want to minify it you can do `gulp minify` which will minify the
-output files, we don't minify by default.
-
-You can also run `gulp run-tests` which will run the tests to make sure everythign works as expected.
-
-### Translations
-
-This is a todo, if needed this will probably be implemented by having a class representing the 
-validation message for a given language linked via the `ruleName` for now all messages are in 
-english but feel free to raise this if you need this functionality sooner rather than later.
-
----
-
-## Why should I use it?
-
-There are LOTS of validation frameworks out currently, some synchronous, some are async, 
-some work off the DOM some work off models. Some of them are tied to specific front end frameworks, 
-others are mainly for the node world.
-
-However in most cases you will be hard pressed to find a easy to use async based one which is 
-agnostic of frameworks/platforms but can be plugged into them. This was the idea behind Treacherous, 
-a simple validation framework which could be shared between browser and server as well as 
-being able to expose MVVM style subscriptions for other frameworks to hook into.
-
-If you share code between multiple worlds (i.e nodejs, browser, mobile) then you may have had
-issues before where you are tied into a specific framework for your front ends and want to 
-re-use your models in the back end as a contractual layer or something. In these cases 
-you often either end up maintaining 2 sets of validation which is ok, but it could be better, 
-and this is where Treacherous attempts to improve this approach.
-
-It is also useful for libraries which contain pure data concerns and have no notion 
-of front end frameworks, so you may have one central library and have one front end
-using ng and one front end using aurelia or knockout for different devices etc. 
-In this case you can have validation as a pure data concern and just plug the validation 
-logic into your MVVM framework so it will automatically listen for the validation concerns 
-letting you re-use more of your code base in a more consistent way.
-
-Ultimately each framework tends to have it's own validation system, but with Treacherous you 
-can write your validation rules once, and consume them anywhere (that has a compatible binding layer).
-
-[build-status-image]: https://travis-ci.org/grofit/treacherous.svg
-[build-status-url]: https://travis-ci.org/grofit/treacherous
-[gitter-image]: https://badges.gitter.im/grofit/treacherous.svg
-[gitter-url]: https://gitter.im/grofit/treacherous
-[npm-version-image]: https://badge.fury.io/js/treacherous.svg
-[npm-version-url]: https://www.npmjs.com/package/treacherous
-[npm-downloads-image]: https://img.shields.io/npm/dm/treacherous.svg?maxAge=2592000

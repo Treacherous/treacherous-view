@@ -1,6 +1,7 @@
 "use strict";
 var element_helper_1 = require("../helpers/element-helper");
 var validation_state_1 = require("../states/validation-state");
+// This is just a dumping ground for me to get my mind around stuff
 var ValidatePropertyBinding = (function () {
     function ValidatePropertyBinding() {
         this.previousState = validation_state_1.ValidationState.unknown;

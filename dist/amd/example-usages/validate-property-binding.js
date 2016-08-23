@@ -1,5 +1,6 @@
 define(["require", "exports", "../helpers/element-helper", "../states/validation-state"], function (require, exports, element_helper_1, validation_state_1) {
     "use strict";
+    // This is just a dumping ground for me to get my mind around stuff
     var ValidatePropertyBinding = (function () {
         function ValidatePropertyBinding() {
             this.previousState = validation_state_1.ValidationState.unknown;

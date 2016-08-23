@@ -1,4 +1,4 @@
-System.register(["./exposer", "./dummy/validate-property-binding", "./helpers/class-helper", "./helpers/element-helper", "./registries/view-strategy-registry", "./registries/view-trigger-registry", "./states/validation-state", "./view-orchestrator/element-binding", "./view-handler/trigger-handler", "./view-strategies/inline-handler", "./view-strategies/inline-strategy", "./view-triggers/blur-trigger", "./view-triggers/change-trigger", "./view-triggers/init-trigger", "./view-triggers/interval-trigger", "./view-triggers/key-up-trigger", "./view-triggers/submit-trigger", "./view-triggers/view-trigger-reference"], function(exports_1, context_1) {
+System.register(["./exposer", "./example-usages/validate-property-binding", "./helpers/class-helper", "./helpers/element-helper", "./states/validation-state", "./registries/view-strategy-registry", "./registries/view-trigger-registry", "./view-strategies/inline-handler", "./view-strategies/inline-strategy", "./view-triggers/blur-trigger", "./view-triggers/change-trigger", "./view-triggers/init-trigger", "./view-triggers/interval-trigger", "./view-triggers/key-up-trigger", "./view-triggers/submit-trigger", "./view-triggers/view-trigger-reference"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     function exportStar_1(m) {
@@ -22,20 +22,14 @@ System.register(["./exposer", "./dummy/validate-property-binding", "./helpers/cl
             function (element_helper_1_1) {
                 exportStar_1(element_helper_1_1);
             },
+            function (validation_state_1_1) {
+                exportStar_1(validation_state_1_1);
+            },
             function (view_strategy_registry_1_1) {
                 exportStar_1(view_strategy_registry_1_1);
             },
             function (view_trigger_registry_1_1) {
                 exportStar_1(view_trigger_registry_1_1);
-            },
-            function (validation_state_1_1) {
-                exportStar_1(validation_state_1_1);
-            },
-            function (element_binding_1_1) {
-                exportStar_1(element_binding_1_1);
-            },
-            function (trigger_handler_1_1) {
-                exportStar_1(trigger_handler_1_1);
             },
             function (inline_handler_1_1) {
                 exportStar_1(inline_handler_1_1);

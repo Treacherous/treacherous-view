@@ -8,7 +8,7 @@
   "main": "dist/commonjs/index.js",
   "typings": "index.d.ts",
   "bugs": {
-    "url": "https://github.com/grofit/treacherous/issues"
+    "url": "https://github.com/grofit/treacherous-view/issues"
   },
   "files": [
     "dist/**/*",

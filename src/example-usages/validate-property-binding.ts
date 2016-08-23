@@ -4,6 +4,7 @@ import {ViewTriggerRegistry} from "../registries/view-trigger-registry";
 import {ElementHelper} from "../helpers/element-helper";
 import {ValidationState} from "../states/validation-state";
 
+// This is just a dumping ground for me to get my mind around stuff
 export class ValidatePropertyBinding {
     protected triggerRegistry: ViewTriggerRegistry;
     protected activeTriggers: Array<Function>;
