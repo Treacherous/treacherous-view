@@ -1,5 +1,4 @@
 import {IViewStrategy} from "./iview-strategy";
-import {ClassHelper} from "../helpers/class-helper";
 import {SummaryHandler} from "./summary-handler";
 
 export class SummaryStrategy implements IViewStrategy
