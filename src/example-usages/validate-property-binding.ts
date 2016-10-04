@@ -29,11 +29,11 @@ export class ValidatePropertyBinding {
         this.validationGroup.getPropertyError(this.propertyRoute, true)
             .then((error) => {
                 if(!error) {
-                    this.viewStrategy.elementBecomeValid(this.element, this.propertyRoute, this.previousState);
+                    this.viewStrategy.propertyBecomeValid(this.element, this.propertyRoute, this.previousState);
                     this.previousState = ValidationState.valid;
                 }
                 else {
-                    this.viewStrategy.elementBecomeInvalid(this.element, error, this.propertyRoute, this.previousState);
+                    this.viewStrategy.propertyBecomeInvalid(this.element, error, this.propertyRoute, this.previousState);
                     this.previousState = ValidationState.invalid;
                 }
             })

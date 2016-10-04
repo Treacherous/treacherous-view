@@ -8,13 +8,13 @@ export class InlineStrategy implements IViewStrategy
 
     constructor(protected inlineHandler = new InlineHandler()){}
 
-    public elementBecomeValid(element: HTMLElement) {
+    public propertyBecomeValid(element: HTMLElement) {
         ClassHelper.removeClass(element, "invalid");
         ClassHelper.addClass(element, "valid");
         this.inlineHandler.removeErrorElement(element);
     }
 
-    public elementBecomeInvalid(element: HTMLElement, error: string) {
+    public propertyBecomeInvalid(element: HTMLElement, error: string) {
         ClassHelper.removeClass(element, "valid");
         ClassHelper.addClass(element, "invalid");
         this.inlineHandler.addElementError(error, element);
