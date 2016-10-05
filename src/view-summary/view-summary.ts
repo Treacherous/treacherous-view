@@ -1,16 +1,11 @@
-import {IViewStrategy} from "./iview-strategy";
 import {SummaryHandler} from "./summary-handler";
+import {IViewSummary} from "./iview-summary";
 
-export class SummaryStrategy implements IViewStrategy
+export class ViewSummary implements IViewSummary
 {
-    public strategyName = "summary";
-
-    protected errors = {};
-
     constructor(protected summaryHandler = new SummaryHandler()){}
 
     public propertyBecomeValid(summaryContainerElement: HTMLElement, propertyRoute: string) {
-        delete this.errors[propertyRoute];
         this.summaryHandler.removePropertyErrorElement(summaryContainerElement, propertyRoute);
     }
 

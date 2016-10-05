@@ -1,9 +1,7 @@
-import { IViewStrategy } from "./iview-strategy";
 import { SummaryHandler } from "./summary-handler";
-export declare class SummaryStrategy implements IViewStrategy {
+import { IViewSummary } from "./iview-summary";
+export declare class ViewSummary implements IViewSummary {
     protected summaryHandler: SummaryHandler;
-    strategyName: string;
-    protected errors: {};
     constructor(summaryHandler?: SummaryHandler);
     propertyBecomeValid(summaryContainerElement: HTMLElement, propertyRoute: string): void;
     propertyBecomeInvalid(summaryContainerElement: HTMLElement, error: string, propertyRoute: string): void;

@@ -1,21 +1,18 @@
 define(["require", "exports", "./summary-handler"], function (require, exports, summary_handler_1) {
     "use strict";
-    var SummaryStrategy = (function () {
-        function SummaryStrategy(summaryHandler) {
+    var ViewSummary = (function () {
+        function ViewSummary(summaryHandler) {
             if (summaryHandler === void 0) { summaryHandler = new summary_handler_1.SummaryHandler(); }
             this.summaryHandler = summaryHandler;
-            this.strategyName = "summary";
-            this.errors = {};
         }
-        SummaryStrategy.prototype.propertyBecomeValid = function (summaryContainerElement, propertyRoute) {
-            delete this.errors[propertyRoute];
+        ViewSummary.prototype.propertyBecomeValid = function (summaryContainerElement, propertyRoute) {
             this.summaryHandler.removePropertyErrorElement(summaryContainerElement, propertyRoute);
         };
-        SummaryStrategy.prototype.propertyBecomeInvalid = function (summaryContainerElement, error, propertyRoute) {
+        ViewSummary.prototype.propertyBecomeInvalid = function (summaryContainerElement, error, propertyRoute) {
             this.summaryHandler.removePropertyErrorElement(summaryContainerElement, propertyRoute);
             this.summaryHandler.createPropertyErrorElement(error, summaryContainerElement, propertyRoute);
         };
-        return SummaryStrategy;
+        return ViewSummary;
     }());
-    exports.SummaryStrategy = SummaryStrategy;
+    exports.ViewSummary = ViewSummary;
 });
