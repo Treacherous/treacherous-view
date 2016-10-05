@@ -27,10 +27,10 @@ this functionality for UMD modules out of the box.
 
 ## What is in here?
 
-So there are 2 big things in here, one is `view-strategies` which are an attempt to provide some "out of the box"
-and example strategies to see how you can get elements to be effected by validation. The other part is `view-triggers` 
-which are basically watchers on elements, they can monitor DOM events or anything you like really, and they will 
-trigger validation per property when a trigger is run.
+`view-strategies` which are an attempt to provide some "out of the box" and example strategies to 
+see how you can get elements to be effected by validation.
+
+There may be some more functionality going forward around view triggers for non MVVM style front ends.
 
 ### View Strategies
 
@@ -54,28 +54,6 @@ this or just ignore it and make your own, but this is generally the way you acce
 The framework comes with built in strategies for the following:
 
 * `inline`    - This will append a message in-line, it is fairly basic and more of an example
-
-### View Triggers
-
-Like the strategies there is a [`IViewTrigger`](src/view-triggers/iview-trigger.ts) which defines the contract for all 
-triggers. They can be as complex or as simple as needed as long as they adhere to the interface.
-
-#### View Triggers Registry
-
-Much like the strategy registry there is a trigger one too which by default comes with the built in triggers.
-
-#### Built in triggers
-
-The framework comes with built in triggers for the following:
-
-* `blur`      - Triggers validation when the DOM element blurs
-* `change`    - Triggers validation when the DOM element changes (blur & value changed)
-* `init`      - Triggers validation when the element is initialized, this happens only once
-* `interval`  - This will continually trigger validation on a given interval, you can tell it only to do so when focused
-* `keyup`     - Triggers validation when any key is released
-* `submit`    - Only triggers validation when a containing form is submitted
-
-Hopefully more will be added as the library evolves.
 
 --- 
 
