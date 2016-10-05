@@ -11,6 +11,7 @@ export class ElementHelper
 
     public static getOptionsFrom(element: HTMLElement): any {
         var optionsLiteral = element.getAttribute("validation-options");
+        if(!optionsLiteral) { return; }
         return JsLiteralHelper.literalToJson(optionsLiteral);
     }
 }

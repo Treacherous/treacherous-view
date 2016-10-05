@@ -6,12 +6,12 @@ define(["require", "exports", "../helpers/class-helper", "./inline-handler"], fu
             this.inlineHandler = inlineHandler;
             this.strategyName = "inline";
         }
-        InlineStrategy.prototype.elementBecomeValid = function (element) {
+        InlineStrategy.prototype.propertyBecomeValid = function (element) {
             class_helper_1.ClassHelper.removeClass(element, "invalid");
             class_helper_1.ClassHelper.addClass(element, "valid");
             this.inlineHandler.removeErrorElement(element);
         };
-        InlineStrategy.prototype.elementBecomeInvalid = function (element, error) {
+        InlineStrategy.prototype.propertyBecomeInvalid = function (element, error) {
             class_helper_1.ClassHelper.removeClass(element, "valid");
             class_helper_1.ClassHelper.addClass(element, "invalid");
             this.inlineHandler.addElementError(error, element);

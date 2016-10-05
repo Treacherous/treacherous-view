@@ -4,6 +4,6 @@ export declare class InlineStrategy implements IViewStrategy {
     protected inlineHandler: InlineHandler;
     strategyName: string;
     constructor(inlineHandler?: InlineHandler);
-    elementBecomeValid(element: HTMLElement): void;
-    elementBecomeInvalid(element: HTMLElement, error: string): void;
+    propertyBecomeValid(element: HTMLElement): void;
+    propertyBecomeInvalid(element: HTMLElement, error: string): void;
 }
