@@ -11,7 +11,7 @@ export class ClassHelper
         if (element.classList)
         { element.classList.add(className); }
         else if (!ClassHelper.hasClass(element, className))
-        { element.className += " " + className; }
+        { element.errorClassName += " " + className; }
     };
 
     static removeClass = (element, className) => {
@@ -19,7 +19,7 @@ export class ClassHelper
         { element.classList.remove(className); }
         else if (ClassHelper.hasClass(element, className)) {
             var reg = new RegExp(`(\\s|^)${className}(\\s|$)`)
-            element.className = element.className.replace(reg, ' ')
+            element.errorClassName = element.className.replace(reg, ' ')
         }
     };
 }

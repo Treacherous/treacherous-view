@@ -1,6 +1,6 @@
 {
   "name": "treacherous-view",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "MIT",
   "dependencies": {
     "treacherous": "0.12.*"

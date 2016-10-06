@@ -14,7 +14,7 @@ define(["require", "exports"], function (require, exports) {
                 element.classList.add(className);
             }
             else if (!ClassHelper.hasClass(element, className)) {
-                element.className += " " + className;
+                element.errorClassName += " " + className;
             }
         };
         ClassHelper.removeClass = function (element, className) {
@@ -23,7 +23,7 @@ define(["require", "exports"], function (require, exports) {
             }
             else if (ClassHelper.hasClass(element, className)) {
                 var reg = new RegExp("(\\s|^)" + className + "(\\s|$)");
-                element.className = element.className.replace(reg, ' ');
+                element.errorClassName = element.className.replace(reg, ' ');
             }
         };
         return ClassHelper;

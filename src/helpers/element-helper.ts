@@ -6,11 +6,11 @@ export class ElementHelper
     }
 
     public static getStrategyFrom(element: HTMLElement): string {
-        return element.getAttribute("validation-strategy");
+        return element.getAttribute("view-strategy");
     }
 
     public static getOptionsFrom(element: HTMLElement): any {
-        var optionsLiteral = element.getAttribute("validation-options");
+        var optionsLiteral = element.getAttribute("view-options");
         if(!optionsLiteral) { return; }
         return JsLiteralHelper.literalToJson(optionsLiteral);
     }

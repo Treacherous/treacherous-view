@@ -5,6 +5,9 @@ var ViewSummary = (function () {
         if (summaryHandler === void 0) { summaryHandler = new summary_handler_1.SummaryHandler(); }
         this.summaryHandler = summaryHandler;
     }
+    ViewSummary.prototype.setupContainer = function (summaryContainerElement) {
+        this.summaryHandler.applyContainerClass(summaryContainerElement);
+    };
     ViewSummary.prototype.propertyBecomeValid = function (summaryContainerElement, propertyRoute) {
         this.summaryHandler.removePropertyErrorElement(summaryContainerElement, propertyRoute);
     };

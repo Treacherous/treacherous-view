@@ -1,4 +1,4 @@
-System.register(["./exposer", "./helpers/class-helper", "./helpers/element-helper", "./helpers/js-literal-helper", "./states/validation-state", "./view-strategies/inline-handler", "./view-strategies/inline-strategy", "./registries/view-strategy-registry", "./view-summary/summary-handler", "./view-summary/view-summary"], function(exports_1, context_1) {
+System.register(["./exposer", "./helpers/class-helper", "./helpers/element-helper", "./helpers/js-literal-helper", "./registries/view-strategy-registry", "./states/validation-state", "./view-strategies/inline-handler", "./view-strategies/inline-strategy", "./view-summary/summary-handler", "./view-summary/view-summary"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     function exportStar_1(m) {
@@ -22,6 +22,9 @@ System.register(["./exposer", "./helpers/class-helper", "./helpers/element-helpe
             function (js_literal_helper_1_1) {
                 exportStar_1(js_literal_helper_1_1);
             },
+            function (view_strategy_registry_1_1) {
+                exportStar_1(view_strategy_registry_1_1);
+            },
             function (validation_state_1_1) {
                 exportStar_1(validation_state_1_1);
             },
@@ -30,9 +33,6 @@ System.register(["./exposer", "./helpers/class-helper", "./helpers/element-helpe
             },
             function (inline_strategy_1_1) {
                 exportStar_1(inline_strategy_1_1);
-            },
-            function (view_strategy_registry_1_1) {
-                exportStar_1(view_strategy_registry_1_1);
             },
             function (summary_handler_1_1) {
                 exportStar_1(summary_handler_1_1);

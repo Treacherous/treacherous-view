@@ -5,6 +5,10 @@ export class ViewSummary implements IViewSummary
 {
     constructor(protected summaryHandler = new SummaryHandler()){}
 
+    public setupContainer(summaryContainerElement: HTMLElement){
+        this.summaryHandler.applyContainerClass(summaryContainerElement);
+    }
+
     public propertyBecomeValid(summaryContainerElement: HTMLElement, propertyRoute: string) {
         this.summaryHandler.removePropertyErrorElement(summaryContainerElement, propertyRoute);
     }
