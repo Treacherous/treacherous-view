@@ -12,8 +12,9 @@ define(["require", "exports", "./summary-handler"], function (require, exports, 
             this.summaryHandler.removePropertyErrorElement(summaryContainerElement, propertyRoute);
         };
         ViewSummary.prototype.propertyBecomeInvalid = function (summaryContainerElement, error, propertyRoute) {
+            var message = propertyRoute + " - " + error;
             this.summaryHandler.removePropertyErrorElement(summaryContainerElement, propertyRoute);
-            this.summaryHandler.createPropertyErrorElement(error, summaryContainerElement, propertyRoute);
+            this.summaryHandler.createPropertyErrorElement(message, summaryContainerElement, propertyRoute);
         };
         return ViewSummary;
     }());
