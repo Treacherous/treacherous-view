@@ -31,7 +31,7 @@ var SummaryHandler = (function () {
         };
     }
     SummaryHandler.elementIdFormat = "summary-error-for-";
-    SummaryHandler.errorClassName = "summary--error";
+    SummaryHandler.errorClassName = "summary-error";
     SummaryHandler.containerClassName = "validation-summary-container";
     return SummaryHandler;
 }());

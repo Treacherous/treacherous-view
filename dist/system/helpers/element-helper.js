@@ -16,10 +16,10 @@ System.register(["./js-literal-helper"], function(exports_1, context_1) {
                     return element.getAttribute("validate-property");
                 };
                 ElementHelper.getStrategyFrom = function (element) {
-                    return element.getAttribute("validation-strategy");
+                    return element.getAttribute("view-strategy");
                 };
                 ElementHelper.getOptionsFrom = function (element) {
-                    var optionsLiteral = element.getAttribute("validation-options");
+                    var optionsLiteral = element.getAttribute("view-options");
                     if (!optionsLiteral) {
                         return;
                     }

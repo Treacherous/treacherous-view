@@ -40,7 +40,7 @@ System.register(["../helpers/class-helper"], function(exports_1, context_1) {
                     };
                 }
                 SummaryHandler.elementIdFormat = "summary-error-for-";
-                SummaryHandler.errorClassName = "summary--error";
+                SummaryHandler.errorClassName = "summary-error";
                 SummaryHandler.containerClassName = "validation-summary-container";
                 return SummaryHandler;
             }());
