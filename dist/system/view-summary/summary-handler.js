@@ -1,14 +1,14 @@
-System.register(["../helpers/class-helper"], function(exports_1, context_1) {
+System.register(["../helpers/class-helper"], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var class_helper_1;
-    var SummaryHandler;
+    var class_helper_1, SummaryHandler;
     return {
-        setters:[
+        setters: [
             function (class_helper_1_1) {
                 class_helper_1 = class_helper_1_1;
-            }],
-        execute: function() {
+            }
+        ],
+        execute: function () {
             SummaryHandler = (function () {
                 function SummaryHandler() {
                     var _this = this;
@@ -39,12 +39,12 @@ System.register(["../helpers/class-helper"], function(exports_1, context_1) {
                         }
                     };
                 }
-                SummaryHandler.elementIdFormat = "summary-error-for-";
-                SummaryHandler.errorClassName = "summary-error";
-                SummaryHandler.containerClassName = "validation-summary-container";
                 return SummaryHandler;
             }());
+            SummaryHandler.elementIdFormat = "summary-error-for-";
+            SummaryHandler.errorClassName = "summary-error";
+            SummaryHandler.containerClassName = "validation-summary-container";
             exports_1("SummaryHandler", SummaryHandler);
         }
-    }
+    };
 });

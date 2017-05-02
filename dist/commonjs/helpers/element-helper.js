@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var js_literal_helper_1 = require("./js-literal-helper");
 var ElementHelper = (function () {
     function ElementHelper() {

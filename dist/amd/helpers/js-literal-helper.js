@@ -1,5 +1,6 @@
 define(["require", "exports"], function (require, exports) {
     "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
     var JsLiteralHelper = (function () {
         function JsLiteralHelper() {
         }
@@ -15,8 +16,8 @@ define(["require", "exports"], function (require, exports) {
             }
             return jsonObject || {};
         };
-        JsLiteralHelper.jsLiteralRegex = /({|,)(?:\s*)(?:')?([A-Za-z_$\.][A-Za-z0-9_ \-\.$]*)(?:')?(?:\s*):/g;
         return JsLiteralHelper;
     }());
+    JsLiteralHelper.jsLiteralRegex = /({|,)(?:\s*)(?:')?([A-Za-z_$\.][A-Za-z0-9_ \-\.$]*)(?:')?(?:\s*):/g;
     exports.JsLiteralHelper = JsLiteralHelper;
 });

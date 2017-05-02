@@ -1,5 +1,6 @@
 define(["require", "exports", "../helpers/class-helper", "./inline-handler"], function (require, exports, class_helper_1, inline_handler_1) {
     "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
     var InlineStrategy = (function () {
         function InlineStrategy(inlineHandler) {
             if (inlineHandler === void 0) { inlineHandler = new inline_handler_1.InlineHandler(); }

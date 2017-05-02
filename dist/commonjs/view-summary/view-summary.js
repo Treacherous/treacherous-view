@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var summary_handler_1 = require("./summary-handler");
 var ViewSummary = (function () {
     function ViewSummary(summaryHandler) {

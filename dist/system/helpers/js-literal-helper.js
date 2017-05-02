@@ -1,10 +1,10 @@
-System.register([], function(exports_1, context_1) {
+System.register([], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var JsLiteralHelper;
     return {
-        setters:[],
-        execute: function() {
+        setters: [],
+        execute: function () {
             JsLiteralHelper = (function () {
                 function JsLiteralHelper() {
                 }
@@ -20,10 +20,10 @@ System.register([], function(exports_1, context_1) {
                     }
                     return jsonObject || {};
                 };
-                JsLiteralHelper.jsLiteralRegex = /({|,)(?:\s*)(?:')?([A-Za-z_$\.][A-Za-z0-9_ \-\.$]*)(?:')?(?:\s*):/g;
                 return JsLiteralHelper;
             }());
+            JsLiteralHelper.jsLiteralRegex = /({|,)(?:\s*)(?:')?([A-Za-z_$\.][A-Za-z0-9_ \-\.$]*)(?:')?(?:\s*):/g;
             exports_1("JsLiteralHelper", JsLiteralHelper);
         }
-    }
+    };
 });

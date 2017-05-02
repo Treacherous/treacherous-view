@@ -1,14 +1,14 @@
-System.register(["./summary-handler"], function(exports_1, context_1) {
+System.register(["./summary-handler"], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var summary_handler_1;
-    var ViewSummary;
+    var summary_handler_1, ViewSummary;
     return {
-        setters:[
+        setters: [
             function (summary_handler_1_1) {
                 summary_handler_1 = summary_handler_1_1;
-            }],
-        execute: function() {
+            }
+        ],
+        execute: function () {
             ViewSummary = (function () {
                 function ViewSummary(summaryHandler) {
                     if (summaryHandler === void 0) { summaryHandler = new summary_handler_1.SummaryHandler(); }
@@ -29,5 +29,5 @@ System.register(["./summary-handler"], function(exports_1, context_1) {
             }());
             exports_1("ViewSummary", ViewSummary);
         }
-    }
+    };
 });

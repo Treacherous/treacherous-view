@@ -1,10 +1,10 @@
-System.register([], function(exports_1, context_1) {
+System.register([], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var ValidationState;
     return {
-        setters:[],
-        execute: function() {
+        setters: [],
+        execute: function () {
             (function (ValidationState) {
                 ValidationState[ValidationState["unknown"] = 0] = "unknown";
                 ValidationState[ValidationState["valid"] = 1] = "valid";
@@ -12,5 +12,5 @@ System.register([], function(exports_1, context_1) {
             })(ValidationState || (ValidationState = {}));
             exports_1("ValidationState", ValidationState);
         }
-    }
+    };
 });

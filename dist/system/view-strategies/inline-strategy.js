@@ -1,17 +1,17 @@
-System.register(["../helpers/class-helper", "./inline-handler"], function(exports_1, context_1) {
+System.register(["../helpers/class-helper", "./inline-handler"], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var class_helper_1, inline_handler_1;
-    var InlineStrategy;
+    var class_helper_1, inline_handler_1, InlineStrategy;
     return {
-        setters:[
+        setters: [
             function (class_helper_1_1) {
                 class_helper_1 = class_helper_1_1;
             },
             function (inline_handler_1_1) {
                 inline_handler_1 = inline_handler_1_1;
-            }],
-        execute: function() {
+            }
+        ],
+        execute: function () {
             InlineStrategy = (function () {
                 function InlineStrategy(inlineHandler) {
                     if (inlineHandler === void 0) { inlineHandler = new inline_handler_1.InlineHandler(); }
@@ -32,5 +32,5 @@ System.register(["../helpers/class-helper", "./inline-handler"], function(export
             }());
             exports_1("InlineStrategy", InlineStrategy);
         }
-    }
+    };
 });

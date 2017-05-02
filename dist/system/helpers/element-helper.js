@@ -1,14 +1,14 @@
-System.register(["./js-literal-helper"], function(exports_1, context_1) {
+System.register(["./js-literal-helper"], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var js_literal_helper_1;
-    var ElementHelper;
+    var js_literal_helper_1, ElementHelper;
     return {
-        setters:[
+        setters: [
             function (js_literal_helper_1_1) {
                 js_literal_helper_1 = js_literal_helper_1_1;
-            }],
-        execute: function() {
+            }
+        ],
+        execute: function () {
             ElementHelper = (function () {
                 function ElementHelper() {
                 }
@@ -29,5 +29,5 @@ System.register(["./js-literal-helper"], function(exports_1, context_1) {
             }());
             exports_1("ElementHelper", ElementHelper);
         }
-    }
+    };
 });

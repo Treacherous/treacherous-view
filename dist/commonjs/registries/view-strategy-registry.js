@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var ViewStrategyRegistry = (function () {
     function ViewStrategyRegistry() {
         var _this = this;

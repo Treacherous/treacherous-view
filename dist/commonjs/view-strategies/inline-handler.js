@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var InlineHandler = (function () {
     function InlineHandler() {
         var _this = this;
@@ -35,7 +36,7 @@ var InlineHandler = (function () {
             }
         };
     }
-    InlineHandler.currentCount = 1;
     return InlineHandler;
 }());
+InlineHandler.currentCount = 1;
 exports.InlineHandler = InlineHandler;

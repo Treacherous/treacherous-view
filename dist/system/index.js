@@ -1,15 +1,15 @@
-System.register(["./exposer", "./helpers/class-helper", "./helpers/element-helper", "./helpers/js-literal-helper", "./registries/view-strategy-registry", "./states/validation-state", "./view-strategies/inline-handler", "./view-strategies/inline-strategy", "./view-summary/summary-handler", "./view-summary/view-summary"], function(exports_1, context_1) {
+System.register(["./exposer", "./helpers/class-helper", "./helpers/element-helper", "./helpers/js-literal-helper", "./registries/view-strategy-registry", "./states/validation-state", "./view-strategies/inline-handler", "./view-strategies/inline-strategy", "./view-summary/summary-handler", "./view-summary/view-summary"], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     function exportStar_1(m) {
         var exports = {};
-        for(var n in m) {
+        for (var n in m) {
             if (n !== "default") exports[n] = m[n];
         }
         exports_1(exports);
     }
     return {
-        setters:[
+        setters: [
             function (exposer_1_1) {
                 exportStar_1(exposer_1_1);
             },
@@ -39,8 +39,9 @@ System.register(["./exposer", "./helpers/class-helper", "./helpers/element-helpe
             },
             function (view_summary_1_1) {
                 exportStar_1(view_summary_1_1);
-            }],
-        execute: function() {
+            }
+        ],
+        execute: function () {
         }
-    }
+    };
 });

@@ -10,7 +10,8 @@ var compileFor = function(moduleType, withTypings) {
             module: moduleType,
             target: "es5",
             moduleResolution: "node",
-            declarationFiles: true
+            declarationFiles: withTypings || false,
+            "lib": ["es2016", "dom"]
         }));
 
     if(withTypings) {
@@ -20,7 +21,7 @@ var compileFor = function(moduleType, withTypings) {
         ]);
     }
 
-    return tsResult.js.pipe(gulp.dest(paths.dist + "/" +moduleType));
+    return tsResult.js.pipe(gulp.dest(paths.dist + "/" + moduleType));
 }
 
 gulp.task('compile', ["clean", "generate-exports"], function() {

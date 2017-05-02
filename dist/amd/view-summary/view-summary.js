@@ -1,5 +1,6 @@
 define(["require", "exports", "./summary-handler"], function (require, exports, summary_handler_1) {
     "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
     var ViewSummary = (function () {
         function ViewSummary(summaryHandler) {
             if (summaryHandler === void 0) { summaryHandler = new summary_handler_1.SummaryHandler(); }

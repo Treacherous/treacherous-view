@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var class_helper_1 = require("../helpers/class-helper");
 var SummaryHandler = (function () {
     function SummaryHandler() {
@@ -30,9 +31,9 @@ var SummaryHandler = (function () {
             }
         };
     }
-    SummaryHandler.elementIdFormat = "summary-error-for-";
-    SummaryHandler.errorClassName = "summary-error";
-    SummaryHandler.containerClassName = "validation-summary-container";
     return SummaryHandler;
 }());
+SummaryHandler.elementIdFormat = "summary-error-for-";
+SummaryHandler.errorClassName = "summary-error";
+SummaryHandler.containerClassName = "validation-summary-container";
 exports.SummaryHandler = SummaryHandler;

@@ -1,10 +1,10 @@
-System.register([], function(exports_1, context_1) {
+System.register([], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var InlineHandler;
     return {
-        setters:[],
-        execute: function() {
+        setters: [],
+        execute: function () {
             InlineHandler = (function () {
                 function InlineHandler() {
                     var _this = this;
@@ -41,10 +41,10 @@ System.register([], function(exports_1, context_1) {
                         }
                     };
                 }
-                InlineHandler.currentCount = 1;
                 return InlineHandler;
             }());
+            InlineHandler.currentCount = 1;
             exports_1("InlineHandler", InlineHandler);
         }
-    }
+    };
 });
