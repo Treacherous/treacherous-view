@@ -11,20 +11,20 @@ export class SummaryHandler
     }
 
     public getPropertyElementName = (propertyRoute: string): string => {
-        var sanitisedPropertyRoute = propertyRoute.replace(/[\[\].]/g, "-");
+        let sanitisedPropertyRoute = propertyRoute.replace(/[\[\].]/g, "-");
         return `${SummaryHandler.elementIdFormat}${sanitisedPropertyRoute}`
     }
 
     public getPropertyErrorElement = (summaryContainerElement: HTMLElement, propertyRoute: string) =>
     {
-        var elementName = this.getPropertyElementName(propertyRoute);
+        let elementName = this.getPropertyElementName(propertyRoute);
         return summaryContainerElement.querySelector(`#${elementName}`);
     };
 
     public createPropertyErrorElement = (message: string, summaryContainerElement: HTMLElement, propertyRoute: string) =>
     {
-        var elementName = this.getPropertyElementName(propertyRoute);
-        var errorContainer = document.createElement("div");
+        let elementName = this.getPropertyElementName(propertyRoute);
+        let errorContainer = document.createElement("div");
         errorContainer.id = elementName;
         errorContainer.className = SummaryHandler.errorClassName;
         errorContainer.textContent = message;
@@ -34,7 +34,7 @@ export class SummaryHandler
 
     public removePropertyErrorElement = (summaryContainerElement: HTMLElement, propertyRoute: string) =>
     {
-        var errorElement = this.getPropertyErrorElement(summaryContainerElement, propertyRoute);
+        let errorElement = this.getPropertyErrorElement(summaryContainerElement, propertyRoute);
         if(errorElement) { summaryContainerElement.removeChild(errorElement); }
     };
 }

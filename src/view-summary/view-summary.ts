@@ -14,7 +14,7 @@ export class ViewSummary implements IViewSummary
     }
 
     public propertyBecomeInvalid(summaryContainerElement: HTMLElement, error: string, propertyRoute: string) {
-        var message = `${propertyRoute} - ${error}`;
+        let message = `${propertyRoute} - ${error}`;
         this.summaryHandler.removePropertyErrorElement(summaryContainerElement, propertyRoute);
         this.summaryHandler.createPropertyErrorElement(message, summaryContainerElement, propertyRoute);
     }

@@ -1,9 +1,9 @@
 {
   "name": "treacherous-view",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "license": "MIT",
   "dependencies": {
-    "treacherous": "^0.14.0"
+    "treacherous": "^0.16.0"
   },
   "main": "dist/commonjs/index.js",
   "typings": "index.d.ts",
@@ -36,7 +36,7 @@
     "gulp-es6-exporter": "^0.0.5",
     "gulp-rename": "^1.2.2",
     "gulp-typedoc": "^2.0.2",
-    "gulp-typescript": "^3.1.6",
+    "gulp-typescript": "^3.1.7",
     "gulp-uglify": "^2.1.2",
     "karma": "^1.6.0",
     "karma-firefox-launcher": "^1.0.1",
@@ -50,9 +50,9 @@
     "phantomjs-prebuilt": "^2.1.14",
     "require-dir": "^0.3.1",
     "rimraf": "^2.6.1",
-    "ts-loader": "^2.0.3",
-    "typedoc": "^0.6.0",
-    "typescript": "^2.3.2",
+    "ts-loader": "^2.1.0",
+    "typedoc": "^0.7.1",
+    "typescript": "^2.3.4",
     "webpack": "^1.15.0",
     "@types/bluebird": "^3.5.2",
     "@types/chai": "^3.5.1",
