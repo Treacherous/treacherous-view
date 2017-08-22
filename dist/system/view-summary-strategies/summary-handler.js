@@ -31,6 +31,7 @@ System.register(["../helpers/class-helper"], function (exports_1, context_1) {
                         errorContainer.textContent = message;
                         errorContainer.setAttribute("property-route", propertyRoute);
                         summaryContainerElement.appendChild(errorContainer);
+                        return errorContainer;
                     };
                     this.removePropertyErrorElement = function (summaryContainerElement, propertyRoute) {
                         var errorElement = _this.getPropertyErrorElement(summaryContainerElement, propertyRoute);
@@ -39,11 +40,11 @@ System.register(["../helpers/class-helper"], function (exports_1, context_1) {
                         }
                     };
                 }
+                SummaryHandler.elementIdFormat = "summary-error-for-";
+                SummaryHandler.errorClassName = "summary-error";
+                SummaryHandler.containerClassName = "validation-summary-container";
                 return SummaryHandler;
             }());
-            SummaryHandler.elementIdFormat = "summary-error-for-";
-            SummaryHandler.errorClassName = "summary-error";
-            SummaryHandler.containerClassName = "validation-summary-container";
             exports_1("SummaryHandler", SummaryHandler);
         }
     };

@@ -1,8 +1,10 @@
 import {SummaryHandler} from "./summary-handler";
-import {IViewSummary} from "./iview-summary";
+import {IViewSummaryStrategy} from "./iview-summary-strategy";
 
-export class ViewSummary implements IViewSummary
+export class DefaultViewSummary implements IViewSummaryStrategy
 {
+    public summaryName = "default";
+
     constructor(protected summaryHandler = new SummaryHandler()){}
 
     public setupContainer(summaryContainerElement: HTMLElement){

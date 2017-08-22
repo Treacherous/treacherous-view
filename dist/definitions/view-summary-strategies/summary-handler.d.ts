@@ -5,6 +5,6 @@ export declare class SummaryHandler {
     applyContainerClass: (summaryContainerElement: HTMLElement) => void;
     getPropertyElementName: (propertyRoute: string) => string;
     getPropertyErrorElement: (summaryContainerElement: HTMLElement, propertyRoute: string) => Element;
-    createPropertyErrorElement: (message: string, summaryContainerElement: HTMLElement, propertyRoute: string) => void;
+    createPropertyErrorElement: (message: string, summaryContainerElement: HTMLElement, propertyRoute: string) => HTMLElement;
     removePropertyErrorElement: (summaryContainerElement: HTMLElement, propertyRoute: string) => void;
 }

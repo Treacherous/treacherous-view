@@ -16,6 +16,7 @@ var InlineHandler = (function () {
             errorContainer.className = "validation-error-container";
             errorContainer.textContent = message;
             element.parentElement.appendChild(errorContainer);
+            return errorContainer;
         };
         this.removeErrorElement = function (element) {
             var errorContainerName = this.getElementValidatorId(element);
@@ -28,15 +29,15 @@ var InlineHandler = (function () {
             var errorContainerName = this.getElementValidatorId(element);
             var errorContainer = document.getElementById(errorContainerName);
             if (!errorContainer) {
-                this.createErrorElement(message, element);
+                return this.createErrorElement(message, element);
             }
             else {
                 this.removeErrorElement(element);
-                this.createErrorElement(message, element);
+                return this.createErrorElement(message, element);
             }
         };
     }
+    InlineHandler.currentCount = 1;
     return InlineHandler;
 }());
-InlineHandler.currentCount = 1;
 exports.InlineHandler = InlineHandler;

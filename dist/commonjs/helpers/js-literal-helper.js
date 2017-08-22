@@ -15,7 +15,7 @@ var JsLiteralHelper = (function () {
         }
         return jsonObject || {};
     };
+    JsLiteralHelper.jsLiteralRegex = /({|,)(?:\s*)(?:')?([A-Za-z_$\.][A-Za-z0-9_ \-\.$]*)(?:')?(?:\s*):/g;
     return JsLiteralHelper;
 }());
-JsLiteralHelper.jsLiteralRegex = /({|,)(?:\s*)(?:')?([A-Za-z_$\.][A-Za-z0-9_ \-\.$]*)(?:')?(?:\s*):/g;
 exports.JsLiteralHelper = JsLiteralHelper;

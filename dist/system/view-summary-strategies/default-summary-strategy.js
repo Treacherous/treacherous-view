@@ -1,7 +1,7 @@
 System.register(["./summary-handler"], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var summary_handler_1, ViewSummary;
+    var summary_handler_1, DefaultViewSummary;
     return {
         setters: [
             function (summary_handler_1_1) {
@@ -9,25 +9,26 @@ System.register(["./summary-handler"], function (exports_1, context_1) {
             }
         ],
         execute: function () {
-            ViewSummary = (function () {
-                function ViewSummary(summaryHandler) {
+            DefaultViewSummary = (function () {
+                function DefaultViewSummary(summaryHandler) {
                     if (summaryHandler === void 0) { summaryHandler = new summary_handler_1.SummaryHandler(); }
                     this.summaryHandler = summaryHandler;
+                    this.summaryName = "default";
                 }
-                ViewSummary.prototype.setupContainer = function (summaryContainerElement) {
+                DefaultViewSummary.prototype.setupContainer = function (summaryContainerElement) {
                     this.summaryHandler.applyContainerClass(summaryContainerElement);
                 };
-                ViewSummary.prototype.propertyBecomeValid = function (summaryContainerElement, propertyRoute) {
+                DefaultViewSummary.prototype.propertyBecomeValid = function (summaryContainerElement, propertyRoute) {
                     this.summaryHandler.removePropertyErrorElement(summaryContainerElement, propertyRoute);
                 };
-                ViewSummary.prototype.propertyBecomeInvalid = function (summaryContainerElement, error, propertyRoute) {
+                DefaultViewSummary.prototype.propertyBecomeInvalid = function (summaryContainerElement, error, propertyRoute) {
                     var message = propertyRoute + " - " + error;
                     this.summaryHandler.removePropertyErrorElement(summaryContainerElement, propertyRoute);
                     this.summaryHandler.createPropertyErrorElement(message, summaryContainerElement, propertyRoute);
                 };
-                return ViewSummary;
+                return DefaultViewSummary;
             }());
-            exports_1("ViewSummary", ViewSummary);
+            exports_1("DefaultViewSummary", DefaultViewSummary);
         }
     };
 });
