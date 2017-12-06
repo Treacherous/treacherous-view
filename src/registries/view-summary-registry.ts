@@ -2,17 +2,17 @@ import {IViewSummaryStrategy} from "../view-summary-strategies/iview-summary-str
 
 export class ViewSummaryRegistry
 {
-    summaries = {};
+    private summaries = {};
 
     public registerSummary = (viewSummaryStrategy: IViewSummaryStrategy): void =>
-    { this.summaries[viewSummaryStrategy.summaryName] = viewSummaryStrategy; };
+    { this.summaries[viewSummaryStrategy.summaryName] = viewSummaryStrategy; }
 
     public unregisterSummary = (viewSummaryStrategy: IViewSummaryStrategy): void =>
-    { delete this.summaries[viewSummaryStrategy.summaryName]; };
+    { delete this.summaries[viewSummaryStrategy.summaryName]; }
 
     public getSummaryNamed = (summaryStrategyName: string): IViewSummaryStrategy =>
-    { return this.summaries[summaryStrategyName] || null; };
+    { return this.summaries[summaryStrategyName] || null; }
 
     public hasSummaryNamed = (summaryStrategyName: string): boolean =>
-    { return this.getSummaryNamed(summaryStrategyName) != null; };
+    { return this.getSummaryNamed(summaryStrategyName) != null; }
 }

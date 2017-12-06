@@ -8,7 +8,7 @@ export class InlineHandler
         { element.setAttribute("id", "unique-" + InlineHandler.currentCount++); }
 
         return element.getAttribute('id') + "-error-container";
-    };
+    }
 
     public createErrorElement = (message: string, element: HTMLElement) : HTMLElement =>
     {
@@ -19,7 +19,7 @@ export class InlineHandler
         errorContainer.textContent = message;
         element.parentElement.appendChild(errorContainer);
         return errorContainer;
-    };
+    }
 
     public removeErrorElement = function(element: HTMLElement)
     {

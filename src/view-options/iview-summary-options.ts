@@ -1,4 +1,4 @@
 export interface IViewSummaryOptions
 {
-    immediateErrors: boolean
+    immediateErrors: boolean;
 }

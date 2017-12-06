@@ -10,7 +10,7 @@ Treacherous view layer which tries to add some conventions and functionality to 
 
 ## Installing
 
-By default the module is exposed as a `commonjs` module, however the dist folder also contains support for `amd` and `system` module types.
+By default the module is exposed as a `commonjs` module, however it also supports the `module` property for an es2015 version for tree shaking etc.
 
 ### Via NPM
 

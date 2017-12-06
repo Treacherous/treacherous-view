@@ -8,18 +8,18 @@ export class SummaryHandler
 
     public applyContainerClass = (summaryContainerElement: HTMLElement) => {
         ClassHelper.addClass(summaryContainerElement, SummaryHandler.containerClassName);
-    };
+    }
 
     public getPropertyElementName = (propertyRoute: string): string => {
         let sanitisedPropertyRoute = propertyRoute.replace(/[\[\].]/g, "-");
         return `${SummaryHandler.elementIdFormat}${sanitisedPropertyRoute}`;
-    };
+    }
 
     public getPropertyErrorElement = (summaryContainerElement: HTMLElement, propertyRoute: string) =>
     {
         let elementName = this.getPropertyElementName(propertyRoute);
         return summaryContainerElement.querySelector(`#${elementName}`);
-    };
+    }
 
     public createPropertyErrorElement = (message: string, summaryContainerElement: HTMLElement, propertyRoute: string) : HTMLElement =>
     {
@@ -31,11 +31,11 @@ export class SummaryHandler
         errorContainer.setAttribute("property-route", propertyRoute);
         summaryContainerElement.appendChild(errorContainer);
         return errorContainer;
-    };
+    }
 
     public removePropertyErrorElement = (summaryContainerElement: HTMLElement, propertyRoute: string) =>
     {
         let errorElement = this.getPropertyErrorElement(summaryContainerElement, propertyRoute);
         if(errorElement) { summaryContainerElement.removeChild(errorElement); }
-    };
+    }
 }
