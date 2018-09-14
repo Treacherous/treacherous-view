@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var summary_handler_1 = require("./summary-handler");
-var DefaultViewSummary = (function () {
+var DefaultViewSummary = /** @class */ (function () {
     function DefaultViewSummary(summaryHandler) {
         if (summaryHandler === void 0) { summaryHandler = new summary_handler_1.SummaryHandler(); }
         this.summaryHandler = summaryHandler;

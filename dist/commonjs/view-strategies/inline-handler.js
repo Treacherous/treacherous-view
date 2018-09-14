@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var InlineHandler = (function () {
+var InlineHandler = /** @class */ (function () {
     function InlineHandler() {
         var _this = this;
         this.getElementValidatorId = function (element) {

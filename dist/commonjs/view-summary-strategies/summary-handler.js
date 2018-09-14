@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var class_helper_1 = require("../helpers/class-helper");
-var SummaryHandler = (function () {
+var SummaryHandler = /** @class */ (function () {
     function SummaryHandler() {
         var _this = this;
         this.applyContainerClass = function (summaryContainerElement) {

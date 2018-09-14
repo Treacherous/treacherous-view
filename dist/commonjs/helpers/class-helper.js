@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var ClassHelper = (function () {
+var ClassHelper = /** @class */ (function () {
     function ClassHelper() {
     }
     ClassHelper.hasClass = function (element, className) {

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var ViewStrategyRegistry = (function () {
+var ViewStrategyRegistry = /** @class */ (function () {
     function ViewStrategyRegistry() {
         var _this = this;
         this.strategies = {};

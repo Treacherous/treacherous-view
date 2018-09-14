@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var ViewSummaryRegistry = (function () {
+var ViewSummaryRegistry = /** @class */ (function () {
     function ViewSummaryRegistry() {
         var _this = this;
         this.summaries = {};
