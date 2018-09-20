@@ -14,7 +14,7 @@ By default the module is exposed as a `commonjs` module, however it also support
 
 ### Via NPM
 
-Just do an `npm install treacherous-view`
+Just do an `npm install @treacherous/view`
 
 ### In browser
 
