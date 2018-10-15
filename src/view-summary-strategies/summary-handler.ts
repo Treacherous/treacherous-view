@@ -11,7 +11,7 @@ export class SummaryHandler
     }
 
     public getPropertyElementName = (propertyRoute: string): string => {
-        let sanitisedPropertyRoute = propertyRoute.replace(/[\[\].]/g, "-");
+        let sanitisedPropertyRoute = propertyRoute.replace(/[\W]/g, "-");
         return `${SummaryHandler.elementIdFormat}${sanitisedPropertyRoute}`;
     }
 
