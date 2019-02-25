@@ -8,7 +8,7 @@ var SummaryHandler = /** @class */ (function () {
             class_helper_1.ClassHelper.addClass(summaryContainerElement, SummaryHandler.containerClassName);
         };
         this.getPropertyElementName = function (propertyRoute) {
-            var sanitisedPropertyRoute = propertyRoute.replace(/[\[\].]/g, "-");
+            var sanitisedPropertyRoute = propertyRoute.replace(/[\W]/g, "-");
             return "" + SummaryHandler.elementIdFormat + sanitisedPropertyRoute;
         };
         this.getPropertyErrorElement = function (summaryContainerElement, propertyRoute) {

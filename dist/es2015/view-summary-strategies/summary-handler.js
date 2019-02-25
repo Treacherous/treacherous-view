@@ -5,7 +5,7 @@ export class SummaryHandler {
             ClassHelper.addClass(summaryContainerElement, SummaryHandler.containerClassName);
         };
         this.getPropertyElementName = (propertyRoute) => {
-            let sanitisedPropertyRoute = propertyRoute.replace(/[\[\].]/g, "-");
+            let sanitisedPropertyRoute = propertyRoute.replace(/[\W]/g, "-");
             return `${SummaryHandler.elementIdFormat}${sanitisedPropertyRoute}`;
         };
         this.getPropertyErrorElement = (summaryContainerElement, propertyRoute) => {
